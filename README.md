@@ -86,11 +86,12 @@ Built-in providers are:
    </data>
    ```
    In this resource file use may specify also messages for type wrong format (see next points). Keys are:
-    ```
+    
     ClientFieldMustBeDate, ClientFieldMustBeDateTime, ClientFieldMustBeInteger, ClientFieldMustBeMonth, 
-    ClientFieldMustBeNumber, ClientFieldMustBePositiveInteger, ClientFieldMustBeTime, ClientFieldMustBeWeek, ColorAttribute,
+    ClientFieldMustBeNumber, ClientFieldMustBePositiveInteger, ClientFieldMustBeTime, 
+    ClientFieldMustBeWeek, ColorAttribute,
     EmailAddressAttribute, UrlAttribute
-    ``` 
+    
     Pls notice that the DynamicRangeAttribute admits several message templates separated by "|". First one is selected when both static minimum and maximum
    are provided, second one when only max is provided, and third when only min is provided. Fourth message is used for dynamic limits violations
    * input tag helpers automatically render the right Html5 input corresponding to the .net type, and to data annotations. On the client 
