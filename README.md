@@ -56,7 +56,7 @@ Built-in providers are:
                     Priority = 10,
                     SourcePrefix = "Welcome"
                 }) ;
-         ```
+     ```
          
    The first line declares one of the classes that may be injected. Its property are filled with the entries
    contained in the options dictionary under the path: `"UI.Strings.Welcome"`. Match is name based and is herarchical:
@@ -139,7 +139,7 @@ Built-in providers are:
                     D InverseTransform(I x);
                 }
             }
-            ```
+         ```
             
 Transform is the first transformation and InverseTransform the second one.They are registred with the call `TransformationsRegister.Add(Type x)`
 that accepts the transformation type as its argument, and are renderend in various ways in the views. 
