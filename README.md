@@ -100,7 +100,7 @@ Built-in providers are:
    all numeric types are rendered with "number", and with "range" iif DataType annotation specifies "Range" data type.
    Datetimes are rendered with "datetime-local", and with "date" if DataType attribute specifies "Date". "time" input is chosen if
    property is a TimeSpan and if it is decorated with the "Time" DataTipe annotation. Strings are rendered with "color" 
-   if they decorated with a "Color" DataType.   Input type "password", "search", "url", "email" are chosen iff the 
+   if they decorated with a "Color" DataType.   Input type "password", "search", "url", "email", "tel" are chosen iff the 
    relative DataTypes are specified.
    * Validation attributes for Emails, and Urls are automatically created when a this DataTypes are used to decorate a property.
    * Client Validation logics has been enhanced to include the newly defined validation attributes and to provide support for 
