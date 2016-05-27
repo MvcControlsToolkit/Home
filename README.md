@@ -69,7 +69,7 @@ Built-in providers are:
    (Priority=2). The last provide takesinfos from all url parameters whose names starts with `"Welcome"`
    (ie also params like Welcome.nested are included, too) and put them under `"UI.Strings.Welcome"`.
                   
-3. MvcControlsToolkit.Core, provides some enhancements of the standared Mvc engine.Namely:
+3. [MvcControlsToolkit.Core](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/tree/master/src/MvcControlsToolkit.Core), provides some enhancements of the standared Mvc engine.Namely:
     * Developer may specify a resoucre file containing custom default messages for all Validation attributes:
     ```C#
      services.AddMvcControlsToolkit(m => { m.CustomMessagesResourceType = typeof(Resources.ErrorMessages); }); 
