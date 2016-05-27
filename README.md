@@ -141,9 +141,9 @@ Built-in providers are:
             }
          ```
             
-Transform is the first transformation and InverseTransform the second one.They are registred with the call `TransformationsRegister.Add(Type x)`
-that accepts the transformation type as its argument, and are renderend in various ways in the views. 
-We will give more details when we will propose actual controls relying on specific transformations.
+    Transform is the first transformation and InverseTransform the second one.They are registred with the call `TransformationsRegister.Add(Type x)`
+    that accepts the transformation type as its argument, and are renderend in various ways in the views. 
+    We will give more details when we will propose actual controls relying on specific transformations.
     
 ## Roadmap
     
