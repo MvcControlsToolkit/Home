@@ -3,9 +3,8 @@ This is the home repository for the Asp.net Core version of the [Mvc Controls
 Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all features, some examples, and the future Roadmap.
 
 ## First public release 
-The first public release will be Asp.net Core Rc2 compatible, and will be available in a few days: we are moving rc1 bits 
-to rc2 and we are preparing examples and live demos. 
-This release will contain the following features:
+The public release of the tookit, First Asp.net Core Rc2 compatible, is out! in a few day documentation, examples and live demos!
+This release contain the following features:
 
 
 1. A [business module](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/tree/master/src/MvcControlsToolkit.Core.Business) that has no reference to asp.net dlls, containing:
@@ -24,6 +23,61 @@ and may be converted into Datetimes by simply assigning them to a Datetime var.
     
     * A `RequiredFielsAttribute`. A class level annotation that accepts a comma separated list of property names, and declares they are required.
     Each property may be also an IEnumerable, in which case it is considered invalid when it is either null or empty.
+    * LinQ productivity tools, more specifically:
+    
+     1) a projection operator(in MvcControlsToolkit.Core.LinQ) to project LinQ queries into ViewModels without being forced to copy manually all properties. It works
+    Like: 
+    ```C#
+    db.MyTable.Where(...)...Project().To<MyViewModel>(m => new MyViewModel{FullName = m.Name+' ' +m.Surname})
+    ```
+    That is, you need to specify just the exceptions from normal property copying, or just `To<MyViewModel>()` if there are no exceptions. 
+    One level nested objects are accessed automatically by concatenating the main object and child object property names in the ViewModel.
+    So, for instance, if I am retrieving `OrderItem` objects that contain the father order into a property named `Order` you can get the `Number` property of the Order object,
+    by adding a `OrderNumber` property to your ViewModel. The projection operator is implemented efficiently and rely on 2 caches 
+    to speed up LinQ expressions automatic creation.
+    
+    2) A `ChangeSet` object (MvcControlsToolkit.Core.Business.Utilities) to help moving changes performed in the user interface into the database. You may create a new `ChangeSet` by calling
+    the static `Create` property of the `ChangeSet` class:
+     ```C#
+     ChangeSet<T, K> Create<T>(IEnumerable<T> oldValues, 
+        IEnumerable<T> newValues, 
+        Expression<Func<T, K>> keyExpression,
+        bool verifyChangedProperties = true)
+     ```
+     Inserted, Modified, Unmodified, and Deleted objects are detected by comparing the ViewModel lists before,and after modifications. The `oldValues` list
+     may be saved by adding an old values section to your View ViewModel and saving it with the help of the `<save-model/>` tag helper (see below the MvcControlsToolkit.Core dll) 
+     `keyExpression` specifies the property that works as a principal key. The principal key may contain a null value in the case of newly added objects.
+     If `veriFyChangedProperies` is `true` old and new values of properties are checked to verify if ViewModels that are not Deleted, nor
+     Inserted are Modified or Unmodified, otherwise all that ViewModels are assumed to be Modified. IEnumerable properties possibly containing child objects,
+     are not taken into account during this processing, so possible children entities must be processed either manually or by using other `ChangeSet` objects.
+     Once created a `ChangeSet` object you may either handle manually the Inserted, Modified, Unmodified, 
+     and Deleted lists or call its `UpdateDatabase` method.
+        ```C#
+        public async Task<List<M>> UpdateDatabase(DbSet<M> table, DbContext ctx, 
+            Expression<Func<M, bool>> accessExpression=null,
+            bool saveChanges = false, boo retrieveChanged = true)
+        ```
+        Where: `M` is the database class (different from the ViewModel the ChangeSet is based on). 
+        `accessExpression` is an expression used to verify "access rights" to modify or delete each entity. 
+        For instance, if we are modifying "task" items we need to verify that the logged user is the owner of the task with an 
+        `accessExpression` like: `m => m.OwnerId == loggedUserId`. If `saveChanges` is `true` `DbContext` changes are saved 
+        automatically after the update, and the possibly newly created keys of the inserted objects are copied into the 
+        associated ViewModels of the Inserted list. If `retrieveChanged` is `true` (the default) the changed objects are retireved 
+        from the database and changed poperties in the associated ViewModels are copied into them, otherwise new instances 
+        of `M` are created, attached to the context as "changed" and Changed ViewMdels are copied into them. `retrieveChanged = false` 
+        may speed up the update when ViewModels contain substantially all properies of `M`, otherwise we are forced to set `retrieveChanged = true`.
+        The method returns the newly created database objects. This list is useful to get the newly created keys in case we set `saveChanges = false` so
+        they cant be copied automatically in the original ViewModels.
+        The `ChangeSet` object may be used also when we need to Insert, Delete, or Save a sigle object. Namely, 
+        for a single insert just put a single object in the `newValues` list and set the `oldValues` list to null. 
+        For a single delete just do the contrary. For a single changed object, if the old copy is available 
+        put the old copy in the `oldValues` list and the modified copy in the `newValues` list, otherwise put the same object
+        in both lists and set `verifyChangedProperties = false`.
+         
+    3) The `MvcControlsToolkit.Core.Business.Utilities.ObjectCopier<M, T>` object to copy properties 
+    with the same name form an instance of `M` to an instanceof `T`. Once created an instance of `ObjectCopier<M, T>` 
+    may be used in several copy operatons. It is worth saving instances of `ObjectCopier<M, T>`, 
+    since during its creation it performs costly reflection operations.
 2.  [An option Module](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/tree/master/src/MvcControlsToolkit.Core.Options) that uses several providers to fill an hierarchical options dictionary. 
 It has the purpose of adapting request processing to the current environment: browser capabilities, logged user, explicitely specified preferences, and overall application settings.
 The option dictionary is used to fill option classes that are injected wherever Asp.net Core accepts injection. 
@@ -113,6 +167,10 @@ Built-in providers are:
    that sends to the server this information,and through the option module that adds it to the options dictionary. 
    This way it may select the right culture to parse numbers and dates received from the client: 
    international for true Html5 inputs,and current culture fo falled back inputs
+   * `<save-model/>` tag helper to save a whole object in a Json or encripted format into an hidden filed. The saved model is 
+   automatically restored by the model binder as if it were a simple property (int, string, etc.). The model to save is specified with the `asp-for` 
+   property. If the `encrypted` poperty is `true` the model is saved with an encrypted format. This helper is useful to store old unmodified 
+   values in order to perform changes tracking (see  `MvcControlsToolkit.Core.Business` dll above)
    * In line transformations may be registred and invoked during View rendering. When this is done the "reistration id" of the 
    transformation is added to all input names, so that during model binding the model binder may apply the "second half of the transformation".
    In line transformations adds general transformations to the rendering/model binding pipeline that adapt 
