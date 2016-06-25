@@ -2,9 +2,162 @@
 This is the home repository for the Asp.net Core version of the [Mvc Controls 
 Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all features, some examples, and the future Roadmap.
 
-## First public release 
-The public release of the tookit, First Asp.net Core Rc2 compatible, is out! in a few day documentation, examples and live demos!
-This release contain the following features:
+## Installation
+1. Create an Ap.net core (rc2) project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package.
+2. Install the following Bower packages: `jquery-validation-unobtrusive-extensions`: >= 1.0.0 to handle 
+    multilanguage enhanced client validation, and `bootstrap-html5-fallback` >= 1.0.0 to have bootstrap widget 
+    fallback of all Html5 inputs.
+3. Install the following **npm** packages in the same order as given below
+    1. `cldr-data` >= 29.0.1. It will install the culture database used by the globalization system. Installation 
+    might last a few minutes.
+    2. `globalize` >= 1.1.1. It installs all modules needed by the globalize library.
+    3. `mvcct-templates` >= 1.0.0. This is an Mvc Controls toolkit specific package that will scaffold 
+    some file in your project.Installation might last a few minutes. After installation 
+    Mvc Controls Toolkit tag helpers, and namespaces will be added to the _ViewImports.cshtml view, 
+    new task will be added to your gulpfile.js (within two files under a "tasks" folder), 
+    an [mvcct-enhancer](https://github.com/MvcControlsToolkit/mvcct-enhancer) options and startup file will be added in `wwwroot/startupjs/startup.js` (see below),
+    and some utility PartialViews will be placed in the Shared folder to handle Globalization, Validation, and Html5 fallback scripts,
+4. Right click on the project gulpfile.js and show the task runner, then run the following tasks:
+    1. Open `tasks/globalize.tasks.js`, and verify if the selected languages/cultures cover your needs, 
+       otherwise add more. Then run the `move:gdata` task that will copy the selected languages data under `wwwroot/globalize`.
+    2. Verify if the globalize modules mentioned in the same file cover your needs, otherwise add more, 
+    and then run the `min:globalize` that minimze the selected modules and plaze the in the unique `wwwroot/globalize/globalize.min`
+    file.
+    3. Open `wwwroot/startupjs/startup.js`. This file contains the overall options module that should be used by all 
+     Javascrit modules handled by the `mvcct-enhancer` module. Here you may force the usage of a widget fallback for any html5 input type also 
+     if browser supports it. It is enough to uncomment the relative section of otpion object and to set `force: true`. 
+     Otherwise bootstrap widget fallback will be used just in case browser doesn't support the associated html5 input.
+     In this file you may also change the widget options (for more information see the [bootstrap-html5-fallback documentation](https://github.com/MvcControlsToolkit/bootstrap-html5-fallback)).
+     The mvcct-enahence module makes available both client validation and html5 input fallback also on ajax received or 
+     dynamically created content. For more information see the [mvcct-enhancer documentation](https://github.com/MvcControlsToolkit/mvcct-enhancer). 
+
+     Once you have finished with options, minimize the `startup.js` file by invoking the `min:startup gulp` task.
+5. Add the following code in the css area of you Layout page:
+    ```C#
+    @{ await Html.RenderPartialAsync("_FallbackCss"); }
+    ```
+    and the following code at the end of the body:
+    ```
+    @{ await Html.RenderPartialAsync("_GlobalizationScriptsPartial"); }
+    @{ await Html.RenderPartialAsync("_EnhancementFallbackPartial"); }
+    @RenderSection("scripts", required: false)
+    <script src="~/startupjs/startup.min.js"></script>
+    ```
+    Validation script may be added to a page by adding:
+    ```
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    ```
+
+    in the srcipt area of the View:
+    ```
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+    ```
+    Anyway an example layout page with the above code inserted in the right points is included in the Shared folder.
+6. In the Startup.cs file,  in the ConfigureServices methos, just after the instruction: `services.AddMvc();`, place:
+    ```C#
+    services.AddMvcControlsToolkit();
+    ```
+    or 
+
+    ```C#
+    services.AddMvcControlsToolkit(m => { m.CustomMessagesResourceType = typeof(ErrorMessages); });
+    ```
+    If you want to provide a resorce file containing custom messages for all 
+    validation attributes (see point 3) in the documentation section for more details
+
+    Then in the Configure method just before the `app.UseMvc(routes =>......` instruction, place:
+    ```C#
+    app.UseMvcControlsToolkit();
+    ```
+    
+
+DONE! you have finished! 
+
+Please don't forget to configure [application culture](https://docs.asp.net/en/latest/fundamentals/localization.html) coherently with the languages specified in `tasks/globalize.tasks.js`. 
+Otherwise if the request set a current that is not among the one specified there Javascript code will break!
+
+I strongly suggest  to test all above steps in the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0-rc2/Example.zip). 
+Plese notice that the example contains migrations, so you need to go in the web project folder, in the package manager consolle,
+and to run the command `dotnet ef database update`.
+
+## Example
+Download the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0-rc2/Example.zip), 
+and apply all steps described above (you don't need to change stratup.js options, globalize modules, or supported languages). 
+You don't have to apply step 6 since Startup.cs class is already configured. Also culture settings have been already 
+put in place properly.
+After that, since the project already contains migrations you need to go in the web project folder, in the package manager consolle,
+and to run the command `dotnet ef database update` that updates/creates the database. Connection string in `appsettings.json` should work, 
+but in case of problems consider changing it.
+
+When the application starts the Welcome message is an example of how the Options/Preferences framework works. 
+You may change it by providing the following parameters in the query string:
+* 'Welcome.Message="your messages"
+* 'Welcome.AddDate="True if you want date be added to the message, otherwise False>" 
+
+Once captured by the Options request provider the above information is stored by all 
+other providers that are configured to store data. In this case by the cookies provider, and by the claims provider.
+The first one works when you are not logged, otherwise its behavior is overriden by the claims provider that stores the info 
+as a user claim in the database. Fom more inforrmation about the Options/Preferences provider please refer to point 1) 
+in the documentation below.
+
+The `GlobalizationTest` menu item goes to a page showing how the MvcControlsToolkit automatically choose the right Html5 input
+for each data type, automatic fallback to bootstrap widgets is provided in case browser doesn't support that input type.
+Moreover, you may force the usage of bootstrap widgets by acting on the options object in the `wwwroot/startupjs/startup.js` 
+file as explained in the installation guide.
+
+Validation range attributes are applied to all date/numeric inputs. `min` and `max` of the Html5 input are automatic set 
+using this validation infos, so for instance dates outside the allowed range in date pickers are not available at all.
+
+The `DynamicRangeTest` page shows how the `DynamicRangeAttribute` forcse an input to be within the limits specified by other inputs.
+In this example the attribute has been set to "Propagate" i.e. to automatically correct (if possible) out-of-the-allowed-range values.
+Each time either the input or its bounds are changed a test is done, and if it fails a correction is attempted on the value.
+
+The `StoreTest` page shows how the `store-model` tag helper works by storing a whole object into an hidden fleld and the rebuilding it 
+when the page is posted. You need to use the inspect browser command to see the content of the hidden field in the page, 
+then post the page, and verify how the model arrives back to the controller, that injects it again in the `store-model` tag helper.
+
+Finally, before going to the `Business DB Test` page, please put a breakpoint in the `Index` action method of the `BusinessTestController`, 
+since that method has no View associated with it and has been built just with the intent of being followed in the debugger.
+A table is cleared, then it is populated with new fresh data, and changes saved. Then all entities are detached 
+from the context with:
+```C#
+foreach (var item in population) ctx.Entry(item).State = EntityState.Detached; 
+```
+In order to simulate a new we request. Then data are retrieved again:
+```C#
+var original = await ctx.TestModels.Project().To\<Models.TestViewModel\>().ToArrayAsync();
+```
+Data are projected in the ViewModel with  MvcControlsToolkit.Project().To<Models.TestViewModel>() thus avoiding manual copying of all fields.
+Then a new copy of the ViewModels is created with the help of the MvcControlsToolkit object copier. 
+One copy simulates original data stored in a `store-model` tag, and the other one simulates data modified by the user.
+
+Insertion, Deletions, and Modifications are detected by building an MvcControlsToolkit `ChangeSet` object:
+```C#
+var changes = ChangeSet.Create(original, changed, m => m.Id);
+```
+
+Then modifications are passed automatically to the database by invoking the `UpdateDatabase` method.
+
+Now data are retriebed again and a custom projection in the ViewModels is used:
+```C#
+.Project().To<Models.TestViewModel>(m => new Models.TestViewModel {
+                FieldBC=m.FieldB+" "+m.FieldC
+            })
+```
+`FieldBC` is built as specified, while all other properies are copied with a same name convention.
+For more infos on the features described in the `Business DB Test` page please read point 1) in the documentation below.
+
+
+
+
+
+
+## Basic Features and Basic Documentation 
+The first  Asp.net Core Rc2 compatible public release of the tookit, is out! in a few day a full documentation web site, documentation, examples and live demos!
+In the meantime the main features documentation is summarized below.
+This first release contains the following features:
 
 
 1. A [business module](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/tree/master/src/MvcControlsToolkit.Core.Business) that has no reference to asp.net dlls, containing:
@@ -126,7 +279,7 @@ Built-in providers are:
 3. [MvcControlsToolkit.Core](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/tree/master/src/MvcControlsToolkit.Core), provides some enhancements of the standared Mvc engine.Namely:
     * Developer may specify a resoucre file containing custom default messages for all Validation attributes:
     ```C#
-     services.AddMvcControlsToolkit(m => { m.CustomMessagesResourceType = typeof(Resources.ErrorMessages); }); 
+     services.AddMvcControlsToolkit(m => { m.CustomMessagesResourceType = typeof(ErrorMessages); }); 
      ```
      ```
      <data name="DynamicRangeAttribute" xml:space="preserve">
@@ -139,6 +292,8 @@ Built-in providers are:
     <value>value is not in the required range</value>
    </data>
    ```
+   This resoutce file must be placed in the root of the web application, in the root namespace that will 
+   have the same name of the WebSite dll. Otherwise it will not be found.
    In this resource file use may specify also messages for type wrong format (see next points). Keys are:
     
     ClientFieldMustBeDate, ClientFieldMustBeDateTime, ClientFieldMustBeInteger, ClientFieldMustBeMonth, 
