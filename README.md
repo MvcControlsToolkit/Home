@@ -2,14 +2,20 @@
 This is the home repository for the Asp.net Core version of the [Mvc Controls 
 Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all features, some examples, and the future Roadmap.
 
+## Current version: 1.0.0 RTM
+This version is compatible with Asp.net Core 1.0.0 Mvc
+
 ## Installation
-1. Create an Ap.net core (rc2) project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package.
+1. Create an Ap.net core Mvc 1.0.0 project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package.
 2. Install the following Bower packages: `jquery-validation-unobtrusive-extensions`: >= 1.0.0 to handle 
     multilanguage enhanced client validation, and `bootstrap-html5-fallback` >= 1.0.0 to have bootstrap widget 
     fallback of all Html5 inputs.
-3. Install the following **npm** packages in the same order as given below
+3. Install the following **npm** packages in the same order as given below. **Important:** As a default Asp.net Core 
+    1.0.0 Mvc project template do not contain a "package.json" file, so no npm folder appears next to the Bower folder.
+    In order to create one, please right click on the project root folder and select "add new item" then select "package.json".
     1. `cldr-data` >= 29.0.1. It will install the culture database used by the globalization system. Installation 
-    might last a few minutes.
+    might last a few minutes. Pls, don't worry this big cultures database is not be deployed when the web application is published. 
+    Neither it is added to source control if you add "node_modules" to the "gitignore" file. 
     2. `globalize` >= 1.1.1. It installs all modules needed by the globalize library.
     3. `mvcct-templates` >= 1.0.0. This is an Mvc Controls toolkit specific package that will scaffold 
     some file in your project.Installation might last a few minutes. After installation 
@@ -17,7 +23,7 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all featur
     new task will be added to your gulpfile.js (within two files under a "tasks" folder), 
     an [mvcct-enhancer](https://github.com/MvcControlsToolkit/mvcct-enhancer) options and startup file will be added in `wwwroot/startupjs/startup.js` (see below),
     and some utility PartialViews will be placed in the Shared folder to handle Globalization, Validation, and Html5 fallback scripts,
-4. Right click on the project gulpfile.js and show the task runner, then run the following tasks:
+4. If not already there a gulpfile.js file appears in the project root. Right click on the project gulpfile.js in order to show the task runner, then run the following tasks:
     1. Open `tasks/globalize.tasks.js`, and verify if the selected languages/cultures cover your needs, 
        otherwise add more. Then run the `move:gdata` task that will copy the selected languages data under `wwwroot/globalize`.
     2. Verify if the globalize modules mentioned in the same file cover your needs, otherwise add more, 
