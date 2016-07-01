@@ -17,7 +17,7 @@ This version is compatible with Asp.net Core 1.0.0 Mvc
     might last a few minutes. Pls, don't worry this big cultures database is not be deployed when the web application is published. 
     Neither it is added to source control if you add "node_modules" to the "gitignore" file. 
     2. `globalize` >= 1.1.1. It installs all modules needed by the globalize library.
-    3. `mvcct-templates` >= 1.0.0. This is an Mvc Controls toolkit specific package that will scaffold 
+    3. `mvcct-templates` >= 1.1.0. This is an Mvc Controls toolkit specific package that will scaffold 
     some file in your project.Installation might last a few minutes. After installation 
     Mvc Controls Toolkit tag helpers, and namespaces will be added to the _ViewImports.cshtml view, 
     new task will be added to your gulpfile.js (within two files under a "tasks" folder), 
