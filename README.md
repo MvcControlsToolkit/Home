@@ -84,12 +84,12 @@ DONE! you have finished!
 Please don't forget to configure [application culture](https://docs.asp.net/en/latest/fundamentals/localization.html) coherently with the languages specified in `tasks/globalize.tasks.js`. 
 Otherwise if the request set a current that is not among the one specified there Javascript code will break!
 
-I strongly suggest  to test all above steps in the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0-rc2/Example.zip). 
+I strongly suggest  to test all above steps in the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0/Example.zip). 
 Plese notice that the example contains migrations, so you need to go in the web project folder, in the package manager consolle,
 and to run the command `dotnet ef database update`.
 
 ## Example
-Download the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0-rc2/Example.zip), 
+Download the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0/Example.zip), 
 and apply all steps described above (you don't need to change stratup.js options, globalize modules, or supported languages). 
 You don't have to apply step 6 since Startup.cs class is already configured. Also culture settings have been already 
 put in place properly.
