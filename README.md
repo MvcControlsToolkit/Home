@@ -1,6 +1,7 @@
 # Asp.net Core Mvc Controls Toolkit Home
 This is the home repository for the Asp.net Core version of the [Mvc Controls 
-Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all features, some examples, and the future Roadmap.
+Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all features, some examples, and the future Roadmap. 
+[Here](https://github.com/MvcControlsToolkit) you may find the list of all repositories included in the Mvc Controls Toolkit project. 
 
 ## Current version: 1.0.0 RTM
 This version is compatible with Asp.net Core 1.0.0 Mvc
