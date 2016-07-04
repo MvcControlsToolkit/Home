@@ -368,9 +368,9 @@ Built-in providers are:
     
 ## Roadmap
     
-Second release should come together with Asp.net core RTM at the end of june,
-and should include a templated server grid with both immediate and batch updates. Filtering/ordering will be based on OData 
-url syntax with the options to use "simple syntax" (prop1=val1&prop2=val2...) for filters. 
+Next version will include a templated server ajax-grid with both immediate updates,and paging. Filtering/ordering will be based on OData 
+url syntax with the options to use "simple syntax" (prop1=val1&prop2=val2...) for filters, and will be available after the fist Asp.net core 
+1.0.0. compatible version of the OData packages.
     
 Other features to come:
 
