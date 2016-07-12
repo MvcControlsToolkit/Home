@@ -329,7 +329,7 @@ Built-in providers are:
    that sends to the server this information,and through the option module that adds it to the options dictionary. 
    This way it may select the right culture to parse numbers and dates received from the client: 
    international for true Html5 inputs,and current culture fo falled back inputs
-   * `<save-model/>` tag helper to save a whole object in a Json or encripted format into an hidden filed. The saved model is 
+   * `<store-model/>` tag helper to save a whole object in a Json or encripted format into an hidden filed. The saved model is 
    automatically restored by the model binder as if it were a simple property (int, string, etc.). The model to save is specified with the `asp-for` 
    property. If the `encrypted` poperty is `true` the model is saved with an encrypted format. This helper is useful to store old unmodified 
    values in order to perform changes tracking (see  `MvcControlsToolkit.Core.Business` dll above)
