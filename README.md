@@ -3,13 +3,14 @@ This is the home repository for the Asp.net Core version of the [Mvc Controls
 Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all features, some examples, and the future Roadmap. 
 [Here](https://github.com/MvcControlsToolkit) you may find the list of all repositories included in the Mvc Controls Toolkit project. 
 
-## Current version: 1.0.0 RTM
+## Current version: 1.0.1 RTM
 This version is compatible with Asp.net Core 1.0.0 Mvc
+See [versions history](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/wiki/Versions-history)
 
 ## Installation
 1. Create an Ap.net core Mvc 1.0.0 project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package.
 2. Install the following Bower packages: `jquery-validation-unobtrusive-extensions`: >= 1.0.0 to handle 
-    multilanguage enhanced client validation, and `bootstrap-html5-fallback` >= 1.0.0 to have bootstrap widget 
+    multilanguage enhanced client validation, and `bootstrap-html5-fallback` >= 1.0.1 to have bootstrap widget 
     fallback of all Html5 inputs.
 3. Install the following **npm** packages in the same order as given below. **Important:** As a default Asp.net Core 
     1.0.0 Mvc project template do not contain a "package.json" file, so no npm folder appears next to the Bower folder.
@@ -18,7 +19,7 @@ This version is compatible with Asp.net Core 1.0.0 Mvc
     might last a few minutes. Pls, don't worry this big cultures database is not be deployed when the web application is published. 
     Neither it is added to source control if you add "node_modules" to the "gitignore" file. 
     2. `globalize` >= 1.1.1. It installs all modules needed by the globalize library.
-    3. `mvcct-templates` >= 1.1.0. This is an Mvc Controls toolkit specific package that will scaffold 
+    3. `mvcct-templates` >= 1.1.1. This is an Mvc Controls toolkit specific package that will scaffold 
     some file in your project.Installation might last a few minutes. After installation 
     Mvc Controls Toolkit tag helpers, and namespaces will be added to the _ViewImports.cshtml view, 
     new task will be added to your gulpfile.js (within two files under a "tasks" folder), 
