@@ -5,7 +5,9 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all featur
 
 ## Current version: 1.0.1 RTM
 This version is compatible with Asp.net Core 1.0.0 Mvc
-See [versions history](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/wiki/Versions-history)
+See [versions history](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/wiki/Versions-history).
+
+See [live examples](http://examples.aspnetcore.mvc-controls.com/).
 
 ## Installation
 1. Create an Ap.net core Mvc 1.0.0 project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package.
