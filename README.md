@@ -9,6 +9,9 @@ See [versions history](https://github.com/MvcControlsToolkit/MvcControlsToolkit.
 
 See [live examples](http://examples.aspnetcore.mvc-controls.com/).
 
+## Announcements
+2016-10-21 - In a few days the 1.1 version: EDITABLE GRIDS, PAGERS, DETAIL VIEWS AND AUTOCOMPLETE! GRID, CONTROLLERS, AND RELATED DB REPOSITORIES MAY BE CREATED WITH MINIMAL CODE, RELYING ON DEFAUL TEMPLATES, NAME CONVENTIONS AND EASY OVERRIDES.
+
 ## Installation
 1. Create an Ap.net core Mvc 1.0.0 project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package.
 2. Install the following Bower packages: `jquery-validation-unobtrusive-extensions`: >= 1.0.0 to handle 
