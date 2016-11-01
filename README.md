@@ -3,28 +3,32 @@ This is the home repository for the Asp.net Core version of the [Mvc Controls
 Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all features, some examples, and the future Roadmap. 
 [Here](https://github.com/MvcControlsToolkit) you may find the list of all repositories included in the Mvc Controls Toolkit project. 
 
-## Current version: 1.0.1 RTM
+## Current version: 1.1.4 RTM
 This version is compatible with Asp.net Core 1.0.0 Mvc
 See [versions history](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/wiki/Versions-history).
 
 See [live examples](http://examples.aspnetcore.mvc-controls.com/).
 
+Installation instructions are updated to the last 1.1.4 release.
+
+Documentation for the newly 1.1.4 features will be provided in a short time in a dedicated documentation web site.
+
 ## Announcements
-2016-10-21 - In a few days the 1.1 version: EDITABLE GRIDS, PAGERS, DETAIL VIEWS AND AUTOCOMPLETE! GRID, CONTROLLERS, AND RELATED DB REPOSITORIES MAY BE CREATED WITH MINIMAL CODE, RELYING ON DEFAUL TEMPLATES, NAME CONVENTIONS AND EASY OVERRIDES.
+2016-11-01 - The new 1.1.4 version is ready, try: EDITABLE GRIDS, PAGERS, DETAIL VIEWS AND AUTOCOMPLETE! GRID, CONTROLLERS, AND RELATED DB REPOSITORIES MAY BE CREATED WITH MINIMAL CODE, RELYING ON DEFAUL TEMPLATES, NAME CONVENTIONS AND EASY OVERRIDES.
 
 ## Installation
-1. Create an Ap.net core Mvc 1.0.0 project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package.
-2. Install the following Bower packages: `jquery-validation-unobtrusive-extensions`: >= 1.0.0 to handle 
-    multilanguage enhanced client validation, and `bootstrap-html5-fallback` >= 1.0.1 to have bootstrap widget 
-    fallback of all Html5 inputs.
+1. Create an Ap.net core Mvc 1.0.1 project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package 1.1.4.
+2. Install the following Bower packages: `jquery-validation-unobtrusive-extensions`: >= 1.0.2 to handle 
+    multilanguage enhanced client validation, `bootstrap-html5-fallback` >= 1.0.2 to have bootstrap widget 
+    fallback of all Html5 inputs, and finally  `mvcct-controls` >= 1.0.2 to have the needed client side JavaScript support for all advanced Mvc Controls Toolkit controls.
 3. Install the following **npm** packages in the same order as given below. **Important:** As a default Asp.net Core 
-    1.0.0 Mvc project template do not contain a "package.json" file, so no npm folder appears next to the Bower folder.
+    1.0.1 Mvc project template do not contain a "package.json" file, so no npm folder appears next to the Bower folder.
     In order to create one, please right click on the project root folder and select "add new item" then select "package.json".
     1. `cldr-data` >= 29.0.1. It will install the culture database used by the globalization system. Installation 
     might last a few minutes. Pls, don't worry this big cultures database is not be deployed when the web application is published. 
     Neither it is added to source control if you add "node_modules" to the "gitignore" file. 
     2. `globalize` >= 1.1.1. It installs all modules needed by the globalize library.
-    3. `mvcct-templates` >= 1.1.1. This is an Mvc Controls toolkit specific package that will scaffold 
+    3. `mvcct-templates` >= 1.1.2. This is an Mvc Controls toolkit specific package that will scaffold 
     some file in your project.Installation might last a few minutes. After installation 
     Mvc Controls Toolkit tag helpers, and namespaces will be added to the _ViewImports.cshtml view, 
     new task will be added to your gulpfile.js (within two files under a "tasks" folder), 
@@ -70,12 +74,12 @@ See [live examples](http://examples.aspnetcore.mvc-controls.com/).
     Anyway an example layout page with the above code inserted in the right points is included in the Shared folder.
 6. In the Startup.cs file,  in the ConfigureServices methos, just after the instruction: `services.AddMvc();`, place:
     ```C#
-    services.AddMvcControlsToolkit();
+    services.AddMvcControlsToolkitControls();
     ```
     or 
 
     ```C#
-    services.AddMvcControlsToolkit(m => { m.CustomMessagesResourceType = typeof(ErrorMessages); });
+    services.AddMvcControlsToolkitControls(m => { m.CustomMessagesResourceType = typeof(ErrorMessages); });
     ```
     If you want to provide a resorce file containing custom messages for all 
     validation attributes (see point 3) in the documentation section for more details
