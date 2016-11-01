@@ -4,7 +4,7 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). Here you will find all featur
 [Here](https://github.com/MvcControlsToolkit) you may find the list of all repositories included in the Mvc Controls Toolkit project. 
 
 ## Current version: 1.1.4 RTM
-This version is compatible with Asp.net Core 1.0.0 Mvc
+This version is compatible with Asp.net Core 1.0.1 Mvc
 See [versions history](https://github.com/MvcControlsToolkit/MvcControlsToolkit.Core/wiki/Versions-history).
 
 See [live examples](http://examples.aspnetcore.mvc-controls.com/).
