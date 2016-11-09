@@ -9,9 +9,12 @@ See [versions history](https://github.com/MvcControlsToolkit/MvcControlsToolkit.
 
 See [live examples](http://examples.aspnetcore.mvc-controls.com/).
 
+Download [example project](https://github.com/MvcControlsToolkit/Home/releases/download/1.1.4/ControlsExamples.zip) and install
+Mvc Controls Toolkit on it following the instructions below. **Important**: perform just steps 1-4, since startup class and Layout view are already configured. **Plese notice that the example contains migrations**, so you need to go in the web project folder, in the package manager consolle, and to run the command `dotnet ef database update`. Please refer to the explanations in [live examples](http://examples.aspnetcore.mvc-controls.com/) for a better understanding of all examples.
+
 Installation instructions are updated to the last 1.1.4 release.
 
-Documentation for the newly 1.1.4 features will be provided in a short time in a dedicated documentation web site.
+The Documentation below contains just 1.0.1 version features. Full documentation that includes all newly 1.1.4 version features will be provided in a short time in a dedicated documentation web site.
 
 ## Announcements
 2016-11-01 - The new 1.1.4 version is ready, try: EDITABLE GRIDS, PAGERS, DETAIL VIEWS AND AUTOCOMPLETE! GRID, CONTROLLERS, AND RELATED DB REPOSITORIES MAY BE CREATED WITH MINIMAL CODE, RELYING ON DEFAUL TEMPLATES, NAME CONVENTIONS AND EASY OVERRIDES.
@@ -95,80 +98,7 @@ DONE! you have finished!
 Please don't forget to configure [application culture](https://docs.asp.net/en/latest/fundamentals/localization.html) coherently with the languages specified in `tasks/globalize.tasks.js`. 
 Otherwise if the request set a current that is not among the one specified there Javascript code will break!
 
-I strongly suggest  to test all above steps in the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0/Example.zip). 
-Plese notice that the example contains migrations, so you need to go in the web project folder, in the package manager consolle,
-and to run the command `dotnet ef database update`.
-
-## Example
-Download the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.0.0/Example.zip), 
-and apply all steps described above (you don't need to change stratup.js options, globalize modules, or supported languages). 
-You don't have to apply step 6 since Startup.cs class is already configured. Also culture settings have been already 
-put in place properly.
-After that, since the project already contains migrations you need to go in the web project folder, in the package manager consolle,
-and to run the command `dotnet ef database update` that updates/creates the database. Connection string in `appsettings.json` should work, 
-but in case of problems consider changing it.
-
-When the application starts the Welcome message is an example of how the Options/Preferences framework works. 
-You may change it by providing the following parameters in the query string:
-* 'Welcome.Message="your messages"
-* 'Welcome.AddDate="True if you want date be added to the message, otherwise False>" 
-
-Once captured by the Options request provider the above information is stored by all 
-other providers that are configured to store data. In this case by the cookies provider, and by the claims provider.
-The first one works when you are not logged, otherwise its behavior is overriden by the claims provider that stores the info 
-as a user claim in the database. Fom more inforrmation about the Options/Preferences provider please refer to point 1) 
-in the documentation below.
-
-The `GlobalizationTest` menu item goes to a page showing how the MvcControlsToolkit automatically choose the right Html5 input
-for each data type, automatic fallback to bootstrap widgets is provided in case browser doesn't support that input type.
-Moreover, you may force the usage of bootstrap widgets by acting on the options object in the `wwwroot/startupjs/startup.js` 
-file as explained in the installation guide.
-
-Validation range attributes are applied to all date/numeric inputs. `min` and `max` of the Html5 input are automatic set 
-using this validation infos, so for instance dates outside the allowed range in date pickers are not available at all.
-
-The `DynamicRangeTest` page shows how the `DynamicRangeAttribute` forcse an input to be within the limits specified by other inputs.
-In this example the attribute has been set to "Propagate" i.e. to automatically correct (if possible) out-of-the-allowed-range values.
-Each time either the input or its bounds are changed a test is done, and if it fails a correction is attempted on the value.
-
-The `StoreTest` page shows how the `store-model` tag helper works by storing a whole object into an hidden fleld and the rebuilding it 
-when the page is posted. You need to use the inspect browser command to see the content of the hidden field in the page, 
-then post the page, and verify how the model arrives back to the controller, that injects it again in the `store-model` tag helper.
-
-Finally, before going to the `Business DB Test` page, please put a breakpoint in the `Index` action method of the `BusinessTestController`, 
-since that method has no View associated with it and has been built just with the intent of being followed in the debugger.
-A table is cleared, then it is populated with new fresh data, and changes saved. Then all entities are detached 
-from the context with:
-```C#
-foreach (var item in population) ctx.Entry(item).State = EntityState.Detached; 
-```
-In order to simulate a new we request. Then data are retrieved again:
-```C#
-var original = await ctx.TestModels.Project().To\<Models.TestViewModel\>().ToArrayAsync();
-```
-Data are projected in the ViewModel with  MvcControlsToolkit.Project().To<Models.TestViewModel>() thus avoiding manual copying of all fields.
-Then a new copy of the ViewModels is created with the help of the MvcControlsToolkit object copier. 
-One copy simulates original data stored in a `store-model` tag, and the other one simulates data modified by the user.
-
-Insertion, Deletions, and Modifications are detected by building an MvcControlsToolkit `ChangeSet` object:
-```C#
-var changes = ChangeSet.Create(original, changed, m => m.Id);
-```
-
-Then modifications are passed automatically to the database by invoking the `UpdateDatabase` method.
-
-Now data are retriebed again and a custom projection in the ViewModels is used:
-```C#
-.Project().To<Models.TestViewModel>(m => new Models.TestViewModel {
-                FieldBC=m.FieldB+" "+m.FieldC
-            })
-```
-`FieldBC` is built as specified, while all other properies are copied with a same name convention.
-For more infos on the features described in the `Business DB Test` page please read point 1) in the documentation below.
-
-
-
-
+I strongly suggest  to test all above steps in the [example provided with the distribution](https://github.com/MvcControlsToolkit/Home/releases/download/1.1.4/ControlsExamples.zip). **Important**:perform just steps 1-4, since startup class and Layout view are already configured. **Plese notice that the example contains migrations**, so go in the web project folder, in the package manager consolle, and run the command `dotnet ef database update`. Please refer to the explanations in [live examples](http://examples.aspnetcore.mvc-controls.com/) for a better understanding of all examples.
 
 
 ## Basic Features and Basic Documentation 
