@@ -23,7 +23,7 @@ The Documentation below contains just 1.0.1 version features. Full documentation
 1. Create an Ap.net core Mvc 1.0.1 project and install the `MvcControlsToolkit.ControlsCore` **Nuget** package 1.1.4.
 2. Install the following Bower packages: `jquery-validation-unobtrusive-extensions`: >= 1.0.2 to handle 
     multilanguage enhanced client validation, `bootstrap-html5-fallback` >= 1.0.2 to have bootstrap widget 
-    fallback of all Html5 inputs, and finally  `mvcct-controls` >= 1.0.2 to have the needed client side JavaScript support for all advanced Mvc Controls Toolkit controls.
+    fallback of all Html5 inputs, and finally  `mvcct-controls` >= 1.0.3 to have the needed client side JavaScript support for all advanced Mvc Controls Toolkit controls.
 3. Install the following **npm** packages in the same order as given below. **Important:** As a default Asp.net Core 
     1.0.1 Mvc project template do not contain a "package.json" file, so no npm folder appears next to the Bower folder.
     In order to create one, please right click on the project root folder and select "add new item" then select "package.json".
