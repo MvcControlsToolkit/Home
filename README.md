@@ -29,11 +29,9 @@ Other features to come:
 * json file with specs of classes to be compiled from C# to TypeScript. Some C# data annotations will be translated into MetaData JavaScript objects, so client side frameworks like angular or knockout may use the same C# classes, with the same validation rules.  Compilation may come in different "flavors" in such a way to adapt the code to various client frameworks.
 * TagHelpers providers for all most common client side frameworks.
 * TypeScript version of IQueryables, DContexts, and DbSets, with changes tracking cababilities and with the possibility 
-to synchronize entities with various data sources (both local, and remote). Some of these feature will be available 
-only on the commercial version.
+to synchronize entities with various data sources (both local, and remote). 
 * Several more complex controls, like TreeViews, enahnced with native Drag/Drop capabilities (or polyfills). 
- Some features will be available just on the commercial version.
-* Advanced interaction protocols and widgets based on native drag and drop (commercial version only). 
+* Advanced interaction protocols and widgets based on native drag and drop. 
      
     
     
