@@ -20,7 +20,7 @@ The Documentation below contains just 1.0.1 version features. Full documentation
   
 ## Roadmap
     
-Next version will include easy to out-of-the box filtering and sorting OData compatible capabilities one may apply easily to grids
+Next version will include easy to use, out-of-the box filtering and sorting OData compatible capabilities you may apply easily to grids
 or to your custom pages. 
 
     
