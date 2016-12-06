@@ -14,9 +14,11 @@ See [full documentation](http://documentation.aspnetcore.mvc-controls.com/)
 
 See [versions history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory).
 
+Download [example project](https://github.com/MvcControlsToolkit/Home/releases/download/1.1.5/ControlsExamples.zip) 
+and follow instructions in INSTRUCTIONS.txt
+
 Installation instructions are updated to the last 1.1.5 release.
 
-The Documentation below contains just 1.0.1 version features. Full documentation that includes all newly 1.1.4 version features will be provided in a short time in a dedicated documentation web site.
   
 ## Roadmap
     
