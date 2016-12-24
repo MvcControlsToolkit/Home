@@ -18,15 +18,18 @@ Download [example project](https://github.com/MvcControlsToolkit/Home/releases/d
 and follow instructions in INSTRUCTIONS.txt
 
 Installation instructions are updated to the last 1.1.5 release.
-
-  
+ 
 ## Roadmap
     
-Next version will include easy to use, out-of-the box filtering and sorting OData compatible capabilities you may apply easily to grids
-or to your custom pages. 
+### Changes in the next to come 1.2 version
 
-    
-Other features to come:
+1. OData 4.0 compatible Filtering, sorting, and grouping capabilities you may apply easily to grids or to your custom pages.
+2. Added a not  trivial default "updating" behavior (current default behavior simply do nothing). Namely, during ajax updates buttons that might interfere with the ongoing operation are automatically disabled, and the updating part of the screen changes its opacity to give a vsual feedback of the update process. As for previous versions default behavior may be changed.
+3. Added antiforgery protection to ServerCrudController Delete
+4. When automatically copying ViewModel/DTO Month and Week properties from/to DB Models with CRUDRepository methods, automatic conversion is performed.
+5. Improved Detail Form default Edit and display templates by adding bootstrap clearfix to all ViewPort line boundaries. This way, the form layout will not break also when using custom column templates with higher heights. 
+
+### Other features to come:
 
 * json file with specs of classes to be compiled from C# to TypeScript. Some C# data annotations will be translated into MetaData JavaScript objects, so client side frameworks like angular or knockout may use the same C# classes, with the same validation rules.  Compilation may come in different "flavors" in such a way to adapt the code to various client frameworks.
 * TagHelpers providers for all most common client side frameworks.
