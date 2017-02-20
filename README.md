@@ -24,10 +24,11 @@ Installation instructions are updated to the last 1.1.5 release.
 ### Changes in the next to come 1.2 version
 
 1. OData 4.0 compatible Filtering, sorting, and grouping capabilities you may apply easily to grids or to your custom pages.
-2. Added a not  trivial default "updating" behavior (current default behavior simply do nothing). Namely, during ajax updates buttons that might interfere with the ongoing operation are automatically disabled, and the updating part of the screen changes its opacity to give a vsual feedback of the update process. As for previous versions default behavior may be changed.
-3. Added antiforgery protection to ServerCrudController Delete
-4. When automatically copying ViewModel/DTO Month and Week properties from/to DB Models with CRUDRepository methods, automatic conversion is performed.
-5. Improved Detail Form default Edit and display templates by adding bootstrap clearfix to all ViewPort line boundaries. This way, the form layout will not break also when using custom column templates with higher heights. 
+2. When DateTimeOffset is used instead of DateTime for date+time editing, automatic conversion to the browser Time zone is performed. On the server side model binder "catches" date, time and client time zone offset in the DateTimeOffset.
+3. Added a not  trivial default "updating" behavior (current default behavior simply does nothing). Namely, during ajax updates buttons that might interfere with the ongoing operation are automatically disabled, and the updating part of the screen changes its opacity to give a vsual feedback of the update process. As for previous versions default behavior may be changed.
+4. Added antiforgery protection to ServerCrudController Delete
+5. When automatically copying ViewModel/DTO Month and Week properties from/to DB Models with CRUDRepository methods, automatic conversion is performed.
+6. Improved Detail Form default Edit and display templates by adding bootstrap clearfix to all ViewPort line boundaries. This way, the form layout will not break also when using custom column templates with higher heights. 
 
 ### Other features to come:
 
