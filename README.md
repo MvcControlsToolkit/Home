@@ -28,7 +28,9 @@ Installation instructions are updated to the last 1.1.5 release.
 3. Added a not  trivial default "updating" behavior (current default behavior simply does nothing). Namely, during ajax updates buttons that might interfere with the ongoing operation are automatically disabled, and the updating part of the screen changes its opacity to give a vsual feedback of the update process. As for previous versions default behavior may be changed.
 4. Added antiforgery protection to ServerCrudController Delete
 5. When automatically copying ViewModel/DTO Month and Week properties from/to DB Models with CRUDRepository methods, automatic conversion is performed.
-6. Improved Detail Form default Edit and display templates by adding bootstrap clearfix to all ViewPort line boundaries. This way, the form layout will not break also when using custom column templates with higher heights. 
+6. DefaultCRUDRepository, and Projection operator will tranform models into viewmodles also in nested collection with no need to copy all properties: writing Select(m => new MyNestedViewModel{}) will suffice.
+7. Added support for interfaces in both business and asp.net core tools. Business tools may return and process interfaces instead of ViewModels, and model binder will bind and validate interfaces.
+8. Improved Detail Form default Edit and display templates by adding bootstrap clearfix to all ViewPort line boundaries. This way, the form layout will not break also when using custom column templates with higher heights. 
 
 ### Other features to come:
 
