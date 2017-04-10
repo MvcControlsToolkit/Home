@@ -1,3 +1,5 @@
+![Asp.net Core Mvc Controls Toolkit tag](https://raw.githubusercontent.com/MvcControlsToolkit/Home/master/MvcControlsToolkitCore.PNG)
+
 # Asp.net Core Mvc Controls Toolkit Home
 This is the home repository for the Asp.net Core version of the [Mvc Controls 
 Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite completely based on TagHelpers!** Here you will find all features, some examples, and the future Roadmap. 
