@@ -5,6 +5,9 @@ This is the home repository for the Asp.net Core version of the [Mvc Controls
 Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite completely based on TagHelpers!** Here you will find all features, some examples, and the future Roadmap. 
 [Here](https://github.com/MvcControlsToolkit) you may find the list of all repositories included in the Mvc Controls Toolkit project. 
 
+## IMPORTANT
+We are transitioning to the new 1.2.0 version. At moment 1.2.0 release is not available yet, since we are beta-testing it, but all associated JavaScript libraries have been already released. Therefore, PAY ATTENTION that the JavaScript libraries you install are the one compatible with the current 1.1.5 release and ARE NOT the latest releases! The right versions to install are listed in the [installation instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
+
 ## Current version: 1.1.5 RTM
 This version is compatible with Asp.net Core 1.1.0 Mvc
 
