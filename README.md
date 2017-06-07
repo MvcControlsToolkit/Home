@@ -11,7 +11,7 @@ The new 1.2.0 version is ready for download!
 ## Current version: 1.2.0 RTM
 This version is compatible with Asp.net Core >= 1.1.0 Mvc
 
-See [installation instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
+See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
 
 See [live examples](http://examples.aspnetcore.mvc-controls.com/).
 
@@ -24,9 +24,9 @@ and follow instructions in INSTRUCTIONS.txt
 
 Installation instructions are updated to the last 1.2.0 release.
  
-## Roadmap
+
     
-### Changes iin the new 1.2 version
+## Changes iin the new 1.2 version
 
 1. OData 4.0 compatible Filtering, sorting, and grouping capabilities you may apply easily to grids or to your custom pages.
 2. When DateTimeOffset is used instead of DateTime for date+time editing, automatic conversion to the browser Time zone is performed. On the server side model binder "catches" date, time and client time zone offset in the DateTimeOffset.
@@ -36,6 +36,8 @@ Installation instructions are updated to the last 1.2.0 release.
 6. DefaultCRUDRepository, and Projection operator will tranform models into viewmodles also in nested collection with no need to copy all properties: writing Select(m => new MyNestedViewModel{}) will suffice.
 7. Added support for interfaces in both business and asp.net core tools. Business tools may return and process interfaces instead of ViewModels, and model binder will bind and validate interfaces.
 8. Improved Detail Form default Edit and display templates by adding bootstrap clearfix to all ViewPort line boundaries. This way, the form layout will not break also when using custom column templates with higher heights. 
+
+## Roadmap
 
 ### Other features to come:
 
