@@ -8,6 +8,11 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 ## News
 The new 1.2.0 version is ready for download! 
 
+**IMPORTANT:** In case Nuget package installation fail in cs 2017. right click on the ploject an select the option to modify it. The 
+substitute the content of the existing PackageTargetFallback&gt with:
+`
+ <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8</PackageTargetFallback>
+ `
 ## Current version: 1.2.0 RTM
 This version is compatible with Asp.net Core >= 1.1.0 Mvc
 
