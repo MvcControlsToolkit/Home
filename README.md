@@ -11,7 +11,7 @@ to .csproj listed below for version 1.2.0.
 
 The new 1.2.0 version is ready for download! 
 
-**IMPORTANT:** In case you installed 1.2.0 instead of1.2.1 and Nuget package installation might fail in VS 2017. Right click on the project an select the option to modify the csproj file. Then substitute the content of the existing PackageTargetFallback with:
+**IMPORTANT:** In case you installed 1.2.0 instead of 1.2.1 and Nuget package installation failed in VS 2017. Right click on the project and select the option to modify the csproj file. Then substitute the content of the existing PackageTargetFallback with:
 `
  <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8</PackageTargetFallback>
  `
