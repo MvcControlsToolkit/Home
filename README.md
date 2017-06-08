@@ -6,13 +6,16 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 [Here](https://github.com/MvcControlsToolkit) you may find the list of all repositories included in the Mvc Controls Toolkit project. 
 
 ## News
+**IMPORTANT:** Available version 1.2.1 that revomes all dependencies from portable-net45+win8, thus avoiding the manual modifications 
+to .csproj listed below for version 1.2.0.
+
 The new 1.2.0 version is ready for download! 
 
-**IMPORTANT:** In case Nuget package installation might fail in VS 2017. Right click on the project an select the option to modify the csproj file. Then substitute the content of the existing PackageTargetFallback with:
+**IMPORTANT:** In case you installed 1.2.0 instead of1.2.1 and Nuget package installation might fail in VS 2017. Right click on the project an select the option to modify the csproj file. Then substitute the content of the existing PackageTargetFallback with:
 `
  <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8</PackageTargetFallback>
  `
-## Current version: 1.2.0 RTM
+## Current version: 1.2.1 RTM
 This version is compatible with Asp.net Core >= 1.1.0 Mvc
 
 See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
