@@ -8,8 +8,7 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 ## News
 The new 1.2.0 version is ready for download! 
 
-**IMPORTANT:** In case Nuget package installation fail in cs 2017. right click on the ploject an select the option to modify it. The 
-substitute the content of the existing PackageTargetFallback with:
+**IMPORTANT:** In case Nuget package installation might fail in VS 2017. Right click on the project an select the option to modify the csproj file. Then substitute the content of the existing PackageTargetFallback with:
 `
  <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8</PackageTargetFallback>
  `
