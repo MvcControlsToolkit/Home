@@ -33,7 +33,7 @@ Installation instructions are updated to the last 1.2.0 release.
  
 
     
-## Changes iin the new 1.2 version
+## Changes in the new 1.2 version
 
 1. OData 4.0 compatible Filtering, sorting, and grouping capabilities you may apply easily to grids or to your custom pages.
 2. When DateTimeOffset is used instead of DateTime for date+time editing, automatic conversion to the browser Time zone is performed. On the server side model binder "catches" date, time and client time zone offset in the DateTimeOffset.
