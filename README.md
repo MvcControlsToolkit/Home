@@ -6,16 +6,10 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 [Here](https://github.com/MvcControlsToolkit) you may find the list of all repositories included in the Mvc Controls Toolkit project. 
 
 ## News
-**IMPORTANT:** Available version 1.2.1 that revomes all dependencies from portable-net45+win8, thus avoiding the manual modifications 
-to .csproj listed below for version 1.2.0.
 
-The new 1.2.0 version is ready for download! 
-
-**IMPORTANT:** In case you installed 1.2.0 instead of 1.2.1 and Nuget package installation failed in VS 2017. Right click on the project and select the option to modify the csproj file. Then substitute the content of the existing PackageTargetFallback with:
-`
- <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8</PackageTargetFallback>
+The new 1.2.5 version is ready for download! 
  `
-## Current version: 1.2.1 RTM
+## Current version: 1.2.5 RTM
 This version is compatible with Asp.net Core >= 1.1.0 Mvc
 
 See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
@@ -33,16 +27,9 @@ Installation instructions are updated to the last 1.2.0 release.
  
 
     
-## Changes in the new 1.2 version
+## Changes in the new 1.2.5 version
 
-1. OData 4.0 compatible Filtering, sorting, and grouping capabilities you may apply easily to grids or to your custom pages.
-2. When DateTimeOffset is used instead of DateTime for date+time editing, automatic conversion to the browser Time zone is performed. On the server side model binder "catches" date, time and client time zone offset in the DateTimeOffset.
-3. Added a not  trivial default "updating" behavior (current default behavior simply does nothing). Namely, during ajax updates buttons that might interfere with the ongoing operation are automatically disabled, and the updating part of the screen changes its opacity to give a vsual feedback of the update process. As for previous versions default behavior may be changed.
-4. Added antiforgery protection to ServerCrudController Delete
-5. When automatically copying ViewModel/DTO Month and Week properties from/to DB Models with CRUDRepository methods, automatic conversion is performed.
-6. DefaultCRUDRepository, and Projection operator will tranform models into viewmodles also in nested collection with no need to copy all properties: writing Select(m => new MyNestedViewModel{}) will suffice.
-7. Added support for interfaces in both business and asp.net core tools. Business tools may return and process interfaces instead of ViewModels, and model binder will bind and validate interfaces.
-8. Improved Detail Form default Edit and display templates by adding bootstrap clearfix to all ViewPort line boundaries. This way, the form layout will not break also when using custom column templates with higher heights. 
+Added full ajax support to OData queries. Now you can put several independent grids in the same page that update and query with ajax. Added defaul blocking animation to all Html ajax operatioons.
 
 ## Roadmap
 
