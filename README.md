@@ -7,9 +7,9 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 
 ## News
 
-The new 1.2.5 version is ready for download! 
+The new 1.2.7 version is ready for download! 
  `
-## Current version: 1.2.5 RTM
+## Current version: 1.2.7 RTM
 This version is compatible with Asp.net Core >= 1.1.0 Mvc
 
 See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
@@ -20,16 +20,16 @@ See [full documentation](http://documentation.aspnetcore.mvc-controls.com/)
 
 See [versions history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory).
 
-Download [example project](https://github.com/MvcControlsToolkit/Home/releases/download/1.1.5/ControlsExamples.zip) 
-and follow instructions in INSTRUCTIONS.txt
+Follow tutorial on [DotNetCurry.com](http://www.dotnetcurry.com/aspnet-mvc/1376/full-stack-development-using-aspnet-mvc-core-toolkit) 
+and download the associated code. If you would like to update the tutorial to the last version, just substitute the version of the nuget package mentioned in the tutorial with the 1.2.7 version and all bower, and npm library versions mentioned in the tutoral with the ones mentioned in the [official installation procedure](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation).
 
-Installation instructions are updated to the last 1.2.0 release.
+Installation instructions are updated to the last 1.2.7 release.
  
 
     
-## Changes in the new 1.2.5 version
+## Changes in the new 1.2.7 version
 
-Added full ajax support to OData queries. Now you can put several independent grids in the same page that update and query with ajax. Added defaul blocking animation to all Html ajax operatioons.
+See [relesae notes](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory#127-)
 
 ## Roadmap
 
