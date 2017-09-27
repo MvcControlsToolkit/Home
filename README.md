@@ -7,12 +7,10 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 
 ## News
 
-The new 1.2.7 version is ready for download! 
+The new 2.0.0  version compatible with both Asp.net Core 1.1 and 2.0 is ready for download! 
  `
 ## Current version: 1.2.7 RTM
-This version is compatible with 2.0.0 > Asp.net Core Mvc >= 1.1.0. 
-
-**IMPORTANT:** Current version is not compatible with the recent Asp.net Core Mvc 2.0.0. A Asp.net Core Mvc 2.0.0 compatible version will be released in a short time.
+This version is compatible with Asp.net Core Mvc  1.1.0-2.0.0. 
 
 See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
 
@@ -23,15 +21,15 @@ See [full documentation](http://documentation.aspnetcore.mvc-controls.com/)
 See [versions history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory).
 
 Follow tutorial on [DotNetCurry.com](http://www.dotnetcurry.com/aspnet-mvc/1376/full-stack-development-using-aspnet-mvc-core-toolkit) 
-and download the associated code. If you would like to update the tutorial to the last version, just substitute the version of the nuget package mentioned in the tutorial with the 1.2.7 version and all bower, and npm library versions mentioned in the tutoral with the ones mentioned in the [official installation procedure](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation).
+and download the associated code. If you would like to update the tutorial to the last version, just substitute the version of the nuget package mentioned in the tutorial with the 2.0.0 version and all bower, and npm library versions mentioned in the tutoral with the ones mentioned in the [official installation procedure](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation).
 
-Installation instructions are updated to the last 1.2.7 release.
+Installation instructions are updated to the last 2.0.0 release.
  
 
     
-## Changes in the new 1.2.7 version
+## Changes in the new 2.0.0 version
 
-See [relesae notes](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory#127-)
+See [relesae notes](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory#200-)
 
 ## Roadmap
 
