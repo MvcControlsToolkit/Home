@@ -9,7 +9,7 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 
 The new 2.0.0  version compatible with both Asp.net Core 1.1 and 2.0 is ready for download! 
  `
-## Current version: 1.2.7 RTM
+## Current version: 2.0.0 RTM
 This version is compatible with Asp.net Core Mvc  1.1.0-2.0.0. 
 
 See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
