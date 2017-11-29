@@ -7,7 +7,9 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 
 ## News
 
-The new 2.0.0  version compatible with both Asp.net Core 1.1 and 2.0 is ready for download! 
+Available 2.1.0 version of Business Layer tools. Add a direct reference to MvcControlsToolkit.Core.Business 2.1.0 to your project in order to upgrade. See [releases history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory)
+
+Available also new CosmoDB/DocumentDB utilities. See [documentation](http://documentation.aspnetcore.mvc-controls.com/DocumentDB/Intro).
  `
 ## Current version: 2.0.0 RTM
 This version is compatible with Asp.net Core Mvc  1.1.0-2.0.0. 
