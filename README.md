@@ -7,11 +7,11 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 
 ## News
 
-Available 2.1.1 version of Business Layer tools. Add a direct reference to MvcControlsToolkit.Core.Business 2.1.0 to your project in order to upgrade. See [releases history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory)
+Available 2.1.0. See [releases history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory)
 
 Available also new CosmoDB/DocumentDB utilities. See [documentation](http://documentation.aspnetcore.mvc-controls.com/DocumentDB/Intro).
  `
-## Current version: 2.0.0 RTM
+## Current version: 2.1.0 RTM
 This version is compatible with Asp.net Core Mvc  1.1.0-2.0.0. 
 
 See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
@@ -23,13 +23,13 @@ See [full documentation](http://documentation.aspnetcore.mvc-controls.com/)
 See [versions history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory).
 
 Follow tutorial on [DotNetCurry.com](http://www.dotnetcurry.com/aspnet-mvc/1376/full-stack-development-using-aspnet-mvc-core-toolkit) 
-and download the associated code. If you would like to update the tutorial to the last version, just substitute the version of the nuget package mentioned in the tutorial with the 2.0.0 version and all bower, and npm library versions mentioned in the tutoral with the ones mentioned in the [official installation procedure](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation).
+and download the associated code. If you would like to update the tutorial to the last version, just substitute the version of the nuget package mentioned in the tutorial with the 2.1.0 version and all bower, and npm library versions mentioned in the tutoral with the ones mentioned in the [official installation procedure](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation).
 
-Installation instructions are updated to the last 2.0.0 release.
+Installation instructions are updated to the last 2.1.0 release.
  
 
     
-## Changes in the new 2.0.0 version
+## Changes in the new 2.1.0 version
 
 See [relesae notes](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory#200-)
 
