@@ -9,7 +9,7 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 
 Available 2.1.0. See [releases history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory)
 
-Available also new CosmoDB/DocumentDB utilities. See [documentation](http://documentation.aspnetcore.mvc-controls.com/DocumentDB/Intro).
+Available also new CosmosDB/DocumentDB utilities. See [documentation](http://documentation.aspnetcore.mvc-controls.com/DocumentDB/Intro).
  `
 ## Current version: 2.1.0 RTM
 This version is compatible with Asp.net Core Mvc  1.1.0-2.0.0. 
@@ -24,6 +24,8 @@ See [versions history](http://documentation.aspnetcore.mvc-controls.com/Home/Rel
 
 Follow tutorial on [DotNetCurry.com](http://www.dotnetcurry.com/aspnet-mvc/1376/full-stack-development-using-aspnet-mvc-core-toolkit) 
 and download the associated code. If you would like to update the tutorial to the last version, just substitute the version of the nuget package mentioned in the tutorial with the 2.1.0 version and all bower, and npm library versions mentioned in the tutoral with the ones mentioned in the [official installation procedure](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation).
+
+For CosmosDB/DocumentDB utilities see the CosmosDB tutorial in the [issue34 of DNCMagazine](http://www.dotnetcurry.net/s/dnc-mag-34th-single).
 
 Installation instructions are updated to the last 2.1.0 release.
  
