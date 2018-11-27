@@ -7,12 +7,12 @@ Toolkit](http://mvccontrolstoolkit.codeplex.com/). **The first controls suite co
 
 ## News
 
-Available 2.1.0. See [releases history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory)
+Available 2.2.0. See [releases history](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory)
 
 Available also new CosmosDB/DocumentDB utilities. See [documentation](http://documentation.aspnetcore.mvc-controls.com/DocumentDB/Intro).
  `
-## Current version: 2.1.0 RTM
-This version is compatible with Asp.net Core Mvc  1.1.0-2.0.0. 
+## Current version: 2.2.0 RTM
+This version is compatible with Asp.net Core Mvc  2.1. 
 
 See [installation/upgrade instructions](http://documentation.aspnetcore.mvc-controls.com/QuickStart/Installation)
 
@@ -27,13 +27,13 @@ and download the associated code. If you would like to update the tutorial to th
 
 For CosmosDB/DocumentDB utilities see the CosmosDB tutorial in the [issue34 of DNCMagazine](http://www.dotnetcurry.net/s/dnc-mag-34th-single).
 
-Installation instructions are updated to the last 2.1.0 release.
+Installation instructions are updated to the last 2.2.0 release.
  
 
     
-## Changes in the new 2.1.0 version
+## Changes in the new 2.2.0 version
 
-See [relesae notes](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory#200-)
+See [relesae notes](http://documentation.aspnetcore.mvc-controls.com/Home/ReleasesHistory#220-)
 
 ## Roadmap
 
